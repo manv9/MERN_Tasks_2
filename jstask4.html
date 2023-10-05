@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="showDate()">Show Date</button>
+    <button type="button" onclick="showTime()">Show Time</button>
+
+
+    <script>
+        function showDate() {
+          var date = new Date();
+        
+          var paragraph = document.createElement('p');
+        
+          paragraph.textContent = date.toLocaleDateString();
+        
+          document.body.appendChild(paragraph);
+        }
+        
+        function showTime() {
+          var date = new Date();
+        
+          var paragraph = document.createElement('p');
+        
+          paragraph.textContent = `${date.getDay()} ${date.getDate()} ${date.getMonth() + 1} ${date.getFullYear()} ${date.toLocaleTimeString()} IST ${date.toLocaleTimeString('en-US', {timeZone: 'Etc/UTC'})}`;
+        
+          document.body.appendChild(paragraph);
+        }
+        </script>
+</body>
+</html>
